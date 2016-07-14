@@ -27,7 +27,6 @@ class MyCollectionView: NSCollectionView {
         frame = NSRect(x: 0, y: 0, width: width, height: itemHeight)
         
         contentView.scrollPoint(NSPoint(x: x, y: 0))
-        scrollView.reflectScrolledClipView(contentView)
     }
     
     func scrollToX(x:CGFloat) {
@@ -42,7 +41,6 @@ class MyCollectionView: NSCollectionView {
         let dx = x - currentX
         
         contentView.animator().bounds.offsetInPlace(dx: dx, dy: 0)
-        scrollView.reflectScrolledClipView(contentView)
         NSAnimationContext.endGrouping()
     }
     
